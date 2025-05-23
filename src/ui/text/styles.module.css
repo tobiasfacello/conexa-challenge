@@ -1,0 +1,30 @@
+.title {
+	font-family: var(--font-neue-montreal-bold);
+	font-size: 48px;
+}
+
+.subtitle {
+	font-family: var(--font-neue-montreal-medium);
+	font-size: 32px;
+}
+
+.paragraph {
+	font-family: var(--font-neue-montreal-medium);
+	font-size: 20px;
+
+	@media (min-width: 960px) {
+		& {
+			font-size: 32px;
+		}
+	}
+}
+
+.details {
+	font-family: var(--font-neue-montreal-book);
+	font-size: 16px;
+	@media (min-width: 960px) {
+		& {
+			font-size: 20px;
+		}
+	}
+}
