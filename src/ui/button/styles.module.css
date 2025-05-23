@@ -1,0 +1,59 @@
+.button {
+	/* Base */
+	width: 100%;
+	height: fit-content;
+	height: 40px;
+	padding: var(--8) var(--16);
+
+	/* Positioning */
+	text-align: center;
+	vertical-align: middle;
+
+	/* Flex */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+
+	/* Colors */
+	background-color: var(--conexa-aqua);
+	color: var(--conexa-950);
+
+	/* Effects */
+	border: none;
+	border-radius: 12px;
+	transition: all 300ms;
+
+	/* Events */
+	&:hover {
+		cursor: pointer;
+		background-color: var(--conexa-aqua-accent);
+	}
+	&:active {
+		background-color: var(--conexa-purple);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		&:hover {
+			background-color: var(--conexa-aqua-accent);
+			transition: all 150ms;
+		}
+		&:active {
+			background-color: var(--conexa-purple);
+		}
+	}
+}
+
+.button__title {
+	/* Font */
+	font-family: var(--font-neue-montreal-book);
+	font-size: var(--16);
+	font-weight: 400;
+	line-height: 24px;
+
+	@media (min-width: 960px) {
+		& {
+			font-size: var(--20);
+		}
+	}
+}
