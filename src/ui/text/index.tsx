@@ -4,7 +4,9 @@ import { TextProps } from '../types';
 //! Styles
 import styles from "./styles.module.css"
 
-export default function Text({ variant, children }: TextProps) {
+export default function Text(props: TextProps) {
+  const { variant, children } = props;
+
   const isTitle = variant === 'title';
   const isSubtitle = variant === 'subtitle';
   const isParagraph = variant === 'paragraph';
