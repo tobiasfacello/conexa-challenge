@@ -17,7 +17,6 @@
 
 	/* Colors */
 	background-color: var(--conexa-aqua);
-	color: var(--conexa-950);
 
 	/* Effects */
 	border: none;
@@ -40,20 +39,6 @@
 		}
 		&:active {
 			background-color: var(--conexa-purple);
-		}
-	}
-}
-
-.button__title {
-	/* Font */
-	font-family: var(--font-neue-montreal-book);
-	font-size: var(--16);
-	font-weight: 400;
-	line-height: 24px;
-
-	@media (min-width: 960px) {
-		& {
-			font-size: var(--20);
 		}
 	}
 }
