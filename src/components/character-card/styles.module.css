@@ -1,0 +1,38 @@
+.card__content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--8);
+}
+
+.card__content__media {
+	position: relative;
+	min-width: 138px;
+	height: 138px;
+	border: 1px solid var(--conexa-300);
+	border-radius: var(--12);
+	overflow: hidden;
+	transition: all 300ms;
+
+	@media (min-width: 960px) {
+		& {
+			min-width: 184px;
+			height: 184px;
+		}
+	}
+}
+
+.card__content__media__image {
+	object-fit: cover;
+}
+
+.card__content__info {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
