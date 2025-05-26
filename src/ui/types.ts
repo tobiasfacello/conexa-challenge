@@ -6,6 +6,7 @@ import { ReactNode, ButtonHTMLAttributes, BaseHTMLAttributes } from 'react';
 //* Button Component
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	readonly children: ReactNode;
+	readonly selected: boolean | null;
 	readonly onClick?: () => void;
 }
 

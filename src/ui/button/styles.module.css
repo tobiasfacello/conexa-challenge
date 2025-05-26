@@ -28,9 +28,6 @@
 		cursor: pointer;
 		background-color: var(--conexa-aqua-accent);
 	}
-	&:active {
-		background-color: var(--conexa-purple);
-	}
 
 	@media (prefers-color-scheme: dark) {
 		&:hover {
@@ -41,4 +38,8 @@
 			background-color: var(--conexa-purple);
 		}
 	}
+}
+
+.selected {
+	background-color: var(--conexa-purple);
 }
