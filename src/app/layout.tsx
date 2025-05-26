@@ -1,5 +1,45 @@
+//! React Core
+import { ReactNode } from 'react';
+
 //! Next Core
 import type { Metadata } from "next";
+import localFont from "next/font/local";
+
+//! Providers
+import CharactersProvider from '@/providers/CharactersProvider';
+import EpisodesProvider from '@/providers/EpisodesProvider';
+import TanstackProvider from "@/providers/TanstackProvider";
+
+//! Fonts
+const NeueMontrealBook = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ppneuemontreal-book.otf",
+      weight: "400",
+    },
+  ],
+  variable: "--font-neue-montreal-book",
+});
+
+const NeueMontrealMedium = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ppneuemontreal-medium.otf",
+      weight: "500",
+    },
+  ],
+  variable: "--font-neue-montreal-medium",
+});
+
+const NeueMontrealBold = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ppneuemontreal-bold.otf",
+      weight: "700",
+    },
+  ],
+  variable: "--font-neue-montreal-bold",
+});
 
 //! Metadata
 export const metadata: Metadata = {
@@ -8,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Conexa | "Rick & Morty" Technical Challenge',
     description: 'Conexa | "Rick & Morty" Technical Challenge',
-    // url: 'URL_ADDRESS-and-morty-tech-challenge.vercel.app/',
+    url: 'fache-conexa-challenge.vercel.app',
     siteName: 'Conexa | "Rick & Morty" Technical Challenge',
     images: [
       {
@@ -32,15 +72,17 @@ export const metadata: Metadata = {
 //* Styles
 import "./globals.css";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className={`${NeueMontrealBook.variable} ${NeueMontrealMedium.variable} ${NeueMontrealBold.variable}`}>
+        <TanstackProvider>
+          <CharactersProvider>
+            <EpisodesProvider>
+              {children}
+            </EpisodesProvider>
+          </CharactersProvider>
+        </TanstackProvider>
       </body>
     </html>
   );
