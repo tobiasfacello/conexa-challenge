@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 
 //! Types
-import { EpisodesUrlType, Episodes } from '@/types';
+import { EpisodesUrlType, EpisodeSchema } from '@/types';
 
 //! Services
 import { getEpisodes } from '@/services/api';
@@ -18,7 +18,7 @@ export function useEpisodes(episodesList: EpisodesUrlType) {
 		isLoading: loading,
 		error,
 		refetch,
-	} = useQuery<Episodes, Error>({
+	} = useQuery<EpisodeSchema[], Error>({
 		enabled: episodesList.length > 0,
 		queryKey: ['episodes', episodesList],
 		queryFn: () => getEpisodes(episodesList),
