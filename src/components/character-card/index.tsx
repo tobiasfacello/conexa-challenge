@@ -2,12 +2,12 @@
 import Image from "next/image";
 
 //! Types
-import { CharacterCardProps } from "./types"
+import { CharacterCardProps } from "../types"
 
 //! Utils
 import { getCharacterStatus, getCharacterSpecie } from "@/utils/character";
 
-//! UI
+//! Components
 import Card from "@/ui/card";
 import Button from "@/ui/button";
 import Text from "@/ui/text";
@@ -16,10 +16,19 @@ import Text from "@/ui/text";
 import styles from './styles.module.css';
 
 export default function CharacterCard(props: CharacterCardProps) {
-  const { image, name, status, specie } = props;
+  const { id, image, name, status, species, episode, selectedCharacter, setCharacter, setEpisodes } = props;
+
+  //! Validations
+  const selectedCharacterValidation = selectedCharacter && id == selectedCharacter.id;
 
   const characterStatus = `${getCharacterStatus(status)} ${status}`;
-  const characterSpecie = `${getCharacterSpecie(specie)} ${specie}`;
+  const characterSpecie = `${getCharacterSpecie(species)} ${species}`;
+
+  //* Handlers
+  const handleSelectedCharacter = () => {
+    setCharacter({ id, name });
+    setEpisodes(episode.map(url => ({ url })));
+  }
 
   return (
     <Card variant="character">
@@ -32,11 +41,12 @@ export default function CharacterCard(props: CharacterCardProps) {
             fill
             priority
             quality={100}
+            sizes="(100%)"
           />
         </div>
         <div className={styles.card__content__info}>
           <Text variant="paragraph">
-            <b>{name}</b>
+            <b className={styles.card__content__info_name}>{name}</b>
           </Text>
           <Text variant="details">
             <b>Status:</b> {characterStatus}
@@ -44,7 +54,7 @@ export default function CharacterCard(props: CharacterCardProps) {
           <Text variant="details">
             <b>Specie:</b> {characterSpecie}
           </Text>
-          <Button children={"Select Character"} />
+          <Button children={selectedCharacterValidation ? "Character Selected ✅" : "Select Character"} selected={selectedCharacterValidation} onClick={handleSelectedCharacter} />
         </div>
       </div>
     </Card>

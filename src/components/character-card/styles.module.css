@@ -2,7 +2,6 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
 	gap: var(--8);
 }
@@ -22,6 +21,12 @@
 			height: 184px;
 		}
 	}
+
+	@media (min-width: 1440px) {
+		& {
+			min-width: 40%;
+		}
+	}
 }
 
 .card__content__media__image {
@@ -30,9 +35,15 @@
 
 .card__content__info {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
+}
+
+.card__content__info_name {
+	@media (min-width: 1440px) {
+		font-size: var(--24);
+	}
 }
