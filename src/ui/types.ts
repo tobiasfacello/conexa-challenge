@@ -1,22 +1,26 @@
-//! UI Types
-
 //! React Core Types
 import { ReactNode, ButtonHTMLAttributes, BaseHTMLAttributes } from 'react';
 
-//* Button Component
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+//* Avatar UI Component
+export type AvatarProps = {
+	src: string;
+	title: string;
+};
+
+//* Button UI Component
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	readonly children: ReactNode;
 	readonly selected: boolean | null;
 	readonly onClick?: () => void;
-}
+};
 
-//* Card Component
+//* Card UI Component
 export type CardProps = {
 	readonly children: React.ReactNode;
 	readonly variant: 'character' | 'episode';
 };
 
-//* Text Component
+//* Text UI Component
 type TitleProps = BaseHTMLAttributes<HTMLHeadingElement> & {
 	variant: 'title';
 	children: React.ReactNode;
@@ -37,6 +41,7 @@ type DetailsProps = BaseHTMLAttributes<HTMLParagraphElement> & {
 	children: React.ReactNode;
 };
 
+//? Unified Text Props
 export type TextProps =
 	| TitleProps
 	| SubtitleProps

@@ -24,18 +24,20 @@
 	transition: all 300ms;
 
 	/* Events */
-	&:hover {
-		cursor: pointer;
-		background-color: var(--conexa-aqua-accent);
-	}
-
-	@media (prefers-color-scheme: dark) {
+	@media (pointer: fine) and (hover: hover) {
 		&:hover {
+			cursor: pointer;
 			background-color: var(--conexa-aqua-accent);
-			transition: all 150ms;
 		}
-		&:active {
-			background-color: var(--conexa-purple);
+
+		@media (prefers-color-scheme: dark) {
+			&:hover {
+				background-color: var(--conexa-aqua-accent);
+				transition: all 150ms;
+			}
+			&:active {
+				background-color: var(--conexa-purple);
+			}
 		}
 	}
 }
