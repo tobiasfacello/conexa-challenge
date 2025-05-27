@@ -31,8 +31,10 @@
 	cursor: pointer;
 	border-radius: var(--8);
 
-	&:hover {
-		background-color: var(--conexa-100);
+	@media (pointer: fine) and (hover: hover) {
+		&:hover {
+			background-color: var(--conexa-100);
+		}
 	}
 }
 
@@ -45,9 +47,11 @@
 	color: var(--conexa-50);
 	border: none;
 
-	&:hover {
-		background-color: var(--conexa-100);
-		color: var(--conexa-950);
+	@media (pointer: fine) and (hover: hover) {
+		&:hover {
+			background-color: var(--conexa-100);
+			color: var(--conexa-950);
+		}
 	}
 }
 

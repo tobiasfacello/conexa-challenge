@@ -35,8 +35,13 @@ export type EpisodesListProps = {
 //* Episode Card
 export type EpisodeCardProps = Pick<
 	EpisodeSchema,
-	'id' | 'name' | 'air_date' | 'characters'
+	'name' | 'air_date' | 'characters'
 >;
+
+//* Episode Characters
+export type EpisodeCharactersProps = {
+	characters: string[];
+};
 
 //* Pagination
 export type PaginationProps = {
