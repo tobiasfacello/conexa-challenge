@@ -1,7 +1,8 @@
 //! Types
 import { EpisodeCardProps } from "../types"
 
-//! UI
+//! Components
+import EpisodeCharacters from "@/components/episode-characters";
 import Card from "@/ui/card";
 import Text from "@/ui/text";
 
@@ -9,7 +10,8 @@ import Text from "@/ui/text";
 import styles from './styles.module.css';
 
 export default function EpisodeCard(props: EpisodeCardProps) {
-  const { id, name, air_date, characters } = props;
+  const { name, air_date, characters } = props;
+
   return (
     <Card variant="episode">
       <div className={styles.card__content}>
@@ -18,10 +20,12 @@ export default function EpisodeCard(props: EpisodeCardProps) {
           <Text variant="details">
             <b>Date:</b> {air_date}
           </Text>
-          <Text variant="details">
-            <b>Seen characters:</b>
-
-          </Text>
+          <div className={styles.card__content__avatars}>
+            <Text variant="details">
+              <b>Seen characters:</b>
+            </Text>
+            <EpisodeCharacters characters={characters} />
+          </div>
         </div>
       </div>
     </Card>

@@ -18,5 +18,12 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	gap: 12px;
+	gap: var(--12);
+}
+
+.card__content__avatars {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--8);
 }
