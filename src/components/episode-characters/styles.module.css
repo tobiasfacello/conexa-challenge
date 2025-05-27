@@ -1,0 +1,7 @@
+.characters__avatars {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: var(--8);
+}
