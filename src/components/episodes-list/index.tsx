@@ -40,15 +40,17 @@ export default function EpisodesList(props: EpisodesListProps) {
         </div>
         <div className={styles.episodes__list}>
           <div className={styles.episodes__list_scrollable}>
-            {episodes && Array.isArray(episodes) && episodes.map((item: EpisodeSchema) => {
-              return (<EpisodeCard
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                air_date={item.air_date}
-                characters={item.characters}
-              />)
-            })}
+            {
+              episodes && Array.isArray(episodes) && episodes.map(
+                (item: EpisodeSchema) =>
+                  <EpisodeCard
+                    key={item.id}
+                    name={item.name}
+                    air_date={item.air_date}
+                    characters={item.characters}
+                  />
+              )
+            }
           </div>
         </div>
       </div>
