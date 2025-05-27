@@ -33,22 +33,23 @@ export default function CharactersList(props: CharactersListProps) {
       </div>
       <div className={styles.characters__list}>
         <div className={styles.characters__list_scrollable}>
-          {characters && characters.results.map((item: CharacterSchema) => {
-            return (
-              <CharacterCard
-                key={item.id}
-                id={item.id}
-                image={item.image}
-                name={item.name}
-                status={item.status}
-                species={item.species}
-                episode={item.episode}
-                selectedCharacter={selectedCharacter}
-                setCharacter={setCharacter}
-                setEpisodes={setEpisodes}
-              />
+          {
+            characters && characters.results.map(
+              (item: CharacterSchema) =>
+                <CharacterCard
+                  key={item.id}
+                  id={item.id}
+                  image={item.image}
+                  name={item.name}
+                  status={item.status}
+                  species={item.species}
+                  episode={item.episode}
+                  selectedCharacter={selectedCharacter}
+                  setCharacter={setCharacter}
+                  setEpisodes={setEpisodes}
+                />
             )
-          })}
+          }
         </div>
       </div>
       <div className={styles.characters__pagination}>
