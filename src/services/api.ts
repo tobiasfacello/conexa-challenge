@@ -9,6 +9,19 @@ import {
 //! Constants
 import { API_BASE_URL } from '@/constants/api';
 
+export async function getCharacterByUrl(url: string): Promise<CharacterSchema> {
+	try {
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error(`Error fetching character from ${url}`);
+		}
+		return response.json() as Promise<CharacterSchema>;
+	} catch (error) {
+		console.error('Error fetching character:', error);
+		throw error;
+	}
+}
+
 export async function getCharacterById(id: number): Promise<CharacterSchema> {
 	try {
 		const response = await fetch(`${API_BASE_URL}/character/${id}`);
